@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's That Pokémon?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        .pixel { font-family: 'Press Start 2P', monospace; }
+    </style>
+</head>
+<body class="min-h-screen bg-[#0d0d0d] flex flex-col items-center justify-center gap-6 px-4">
+
+    <h1 class="pixel text-yellow-400 text-xl text-center leading-relaxed drop-shadow-[0_0_12px_rgba(250,204,21,0.4)]">
+        WHO'S THAT<br>POKÉMON?
+    </h1>
+
+    <div class="bg-[#1a1a1a] border border-white/10 rounded-3xl p-8 w-full max-w-sm flex flex-col items-center gap-5 shadow-2xl">
+
+        <!-- Image -->
+        <div class="bg-[#111] rounded-2xl w-52 h-52 flex items-center justify-center border border-white/5">
+            <img src="" alt="Pokemon" id="img" class="w-40 h-40 object-contain" style="image-rendering:pixelated">
+        </div>
+
+        <!-- Generate button -->
+        <button
+            onclick="fetchData()"
+            class="w-full bg-yellow-400 hover:bg-yellow-300 active:scale-95 transition-all text-black font-bold py-3 rounded-xl pixel text-xs"
+        >
+            Generate
+        </button>
+
+        <!-- Input + Submit -->
+        <div class="flex gap-2 w-full">
+            <input
+                type="text"
+                id="search"
+                placeholder="Enter pokemon name"
+                class="flex-1 bg-[#111] border border-white/10 focus:border-yellow-400/50 outline-none rounded-xl px-4 py-3 text-white text-sm placeholder-white/20 transition-colors"
+            >
+            <button
+                onclick="checkPokemon()"
+                class="bg-[#111] hover:bg-white/5 border border-white/10 hover:border-white/20 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-all active:scale-95"
+            >
+                Submit
+            </button>
+        </div>
+
+        <!-- Output -->
+        <h1 id="output" class="pixel text-xs text-center text-white min-h-[1rem]"></h1>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
