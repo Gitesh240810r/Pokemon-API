@@ -8,7 +8,7 @@ async function fetchData(){
         const data = await api.json();
         
         const pokemonLength = data.count;
-        const randomIndex = Math.floor(Math.random()*pokemonLength) + 1;
+        const randomIndex = Math.floor(Math.random()*1350) + 1;
 
         const pokemon =  await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIndex}`);
         const data2 = await pokemon.json();
@@ -31,6 +31,10 @@ function checkPokemon(){
     
     if ( search === currentPokemon){
         output.innerHTML = ("you've found the pokemon!");
+        document.getElementById("search").value = "";
+    }
+    if ( search === ""){
+        output.innerHTML = ("enter something");
         document.getElementById("search").value = "";
     }
     else{
