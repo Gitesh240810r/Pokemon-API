@@ -33,7 +33,7 @@ function checkPokemon(){
         output.innerHTML = ("you've found the pokemon!");
         document.getElementById("search").value = "";
     }
-    if ( search === ""){
+    if ( search === " "){
         output.innerHTML = ("enter something");
         document.getElementById("search").value = "";
     }
